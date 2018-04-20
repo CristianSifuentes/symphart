@@ -9,12 +9,18 @@
 
   class ArticleController extends Controller{
 
+
+
+
     /**
      * @Route("/")
      * @Method({ "GET" })
      */
     public function index(){
+
+      $articles= ['Article 1', 'Article 2'];
+
       /*return new Response('<html><body>hello</body></html>');*/
-      return $this->render('articles/index.html.twig', array('name' => 'Brad'));
+      return $this->render('articles/index.html.twig', array('articles' => $articles));
     }
   }
