@@ -30,20 +30,20 @@ class Article
     public function getId(){
         return $this->id;
     }
+
+
     public function getTitle(){
+        
         return $this->title;
     }
+    public function setTitle($title){
+        $this->title = $title;
+    }
+
     public function getbody(){
         return $body->body;
     }
-
-    public function setId(){
-         $this->id = $id;
-    }
-    public function setTitle(){
-        $this->title = $title;
-    }
-    public function setbody(){
+    public function setbody($body){
         $this->body = $body;
     }
     
