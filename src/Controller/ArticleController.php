@@ -11,25 +11,21 @@
 
   class ArticleController extends Controller{
 
-
-
-
     /**
      * @Route("/")
      * @Method({ "GET" })
      */
     public function index(){
 
-      $articles= ['Article 1', 'Article 2'];
 
-      /*return new Response('<html><body>hello</body></html>');*/
+      $articles= $this->getDoctrine()->getRepository(Article::class)->findAll();
       return $this->render('articles/index.html.twig', array('articles' => $articles));
     }
 
     /**
      * @Route("/article/save")
      */
-    public function save(){
+    /*public function save(){
       $entityManager = $this->getDoctrine()->getManager();
 
       $article = new Article();
@@ -42,5 +38,5 @@
       $entityManager->persist($article);
       $entityManager->flush();
       return new Response('Saved an article with the id of  '.$article->getId());      
-    } 
+    }*/ 
   }
